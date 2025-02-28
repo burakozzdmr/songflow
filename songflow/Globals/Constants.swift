@@ -11,4 +11,5 @@ class Constants {
     static let splash = "splash"
     static let primaryBackgroundColor = "primaryBackgroundColor"
     static let primaryButtonColor = "primaryButtonColor"
+    static let successmark = "successmark"
 }

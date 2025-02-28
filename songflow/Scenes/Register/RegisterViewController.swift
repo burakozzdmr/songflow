@@ -158,7 +158,7 @@ private extension RegisterViewController {
 
 private extension RegisterViewController {
     @objc func registerTapped() {
-        
+        navigationController?.pushViewController(RegisterResultViewController(), animated: true)
     }
     
     @objc func dismissKeyboard() {

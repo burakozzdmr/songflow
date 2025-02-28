@@ -122,7 +122,7 @@ private extension LoginViewController {
     
     func configureConstraints() {
         loginImageView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(96)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(64)
             $0.centerX.equalToSuperview()
             $0.width.height.equalTo(128)
         }
@@ -145,7 +145,7 @@ private extension LoginViewController {
         }
         
         loginButton.snp.makeConstraints {
-            $0.top.equalTo(forgotPasswordLabel.snp.bottom).offset(48)
+            $0.top.equalTo(forgotPasswordLabel.snp.bottom).offset(64)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(320)
             $0.height.equalTo(56)
