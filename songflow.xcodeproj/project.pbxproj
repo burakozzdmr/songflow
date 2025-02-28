@@ -6,17 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		08C1AF1E2D71FA370094E0B8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 08C1AF1D2D71FA370094E0B8 /* SnapKit */; };
-		08C1AF212D71FA430094E0B8 /* BYCustomTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 08C1AF202D71FA430094E0B8 /* BYCustomTextField */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		08C1AE9E2D71F7D50094E0B8 /* songflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = songflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		08C1AF242D71FDC10094E0B8 /* Exceptions for "songflow" folder in "songflow" target */ = {
+		08C1B0462D7257670094E0B8 /* Exceptions for "songflow" folder in "songflow" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Resources/Info.plist,
@@ -29,7 +24,7 @@
 		08C1AEA02D71F7D50094E0B8 /* songflow */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				08C1AF242D71FDC10094E0B8 /* Exceptions for "songflow" folder in "songflow" target */,
+				08C1B0462D7257670094E0B8 /* Exceptions for "songflow" folder in "songflow" target */,
 			);
 			path = songflow;
 			sourceTree = "<group>";
@@ -41,8 +36,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08C1AF212D71FA430094E0B8 /* BYCustomTextField in Frameworks */,
-				08C1AF1E2D71FA370094E0B8 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,8 +78,6 @@
 			);
 			name = songflow;
 			packageProductDependencies = (
-				08C1AF1D2D71FA370094E0B8 /* SnapKit */,
-				08C1AF202D71FA430094E0B8 /* BYCustomTextField */,
 			);
 			productName = songflow;
 			productReference = 08C1AE9E2D71F7D50094E0B8 /* songflow.app */;
@@ -116,10 +107,6 @@
 			);
 			mainGroup = 08C1AE952D71F7D50094E0B8;
 			minimizedProjectReferenceProxies = 1;
-			packageReferences = (
-				08C1AF1C2D71FA370094E0B8 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				08C1AF1F2D71FA430094E0B8 /* XCRemoteSwiftPackageReference "BYCustomTextField" */,
-			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 08C1AE9F2D71F7D50094E0B8 /* Products */;
 			projectDirPath = "";
@@ -362,38 +349,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		08C1AF1C2D71FA370094E0B8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.7.1;
-			};
-		};
-		08C1AF1F2D71FA430094E0B8 /* XCRemoteSwiftPackageReference "BYCustomTextField" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/bayramyelec/BYCustomTextField";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.4;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		08C1AF1D2D71FA370094E0B8 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 08C1AF1C2D71FA370094E0B8 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		08C1AF202D71FA430094E0B8 /* BYCustomTextField */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 08C1AF1F2D71FA430094E0B8 /* XCRemoteSwiftPackageReference "BYCustomTextField" */;
-			productName = BYCustomTextField;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 08C1AE962D71F7D50094E0B8 /* Project object */;
 }
