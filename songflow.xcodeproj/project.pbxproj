@@ -10,9 +10,22 @@
 		08C1AE9E2D71F7D50094E0B8 /* songflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = songflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		08C1B0592D7257DE0094E0B8 /* Exceptions for "songflow" folder in "songflow" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resources/Info.plist,
+			);
+			target = 08C1AE9D2D71F7D50094E0B8 /* songflow */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		08C1AEA02D71F7D50094E0B8 /* songflow */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				08C1B0592D7257DE0094E0B8 /* Exceptions for "songflow" folder in "songflow" target */,
+			);
 			path = songflow;
 			sourceTree = "<group>";
 		};
