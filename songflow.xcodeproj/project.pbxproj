@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		08C1B0682D7258CB0094E0B8 /* BYCustomTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 08C1B0672D7258CB0094E0B8 /* BYCustomTextField */; };
 		08C1B06B2D7258D60094E0B8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 08C1B06A2D7258D60094E0B8 /* SnapKit */; };
+		08C1B0932D7278F00094E0B8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 08C1B0922D7278F00094E0B8 /* FirebaseAuth */; };
+		08C1B0952D7278F00094E0B8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 08C1B0942D7278F00094E0B8 /* FirebaseFirestore */; };
+		08C1B0972D7278F00094E0B8 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 08C1B0962D7278F00094E0B8 /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				08C1B0682D7258CB0094E0B8 /* BYCustomTextField in Frameworks */,
+				08C1B0952D7278F00094E0B8 /* FirebaseFirestore in Frameworks */,
+				08C1B0932D7278F00094E0B8 /* FirebaseAuth in Frameworks */,
+				08C1B0972D7278F00094E0B8 /* FirebaseStorage in Frameworks */,
 				08C1B06B2D7258D60094E0B8 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +93,9 @@
 			packageProductDependencies = (
 				08C1B0672D7258CB0094E0B8 /* BYCustomTextField */,
 				08C1B06A2D7258D60094E0B8 /* SnapKit */,
+				08C1B0922D7278F00094E0B8 /* FirebaseAuth */,
+				08C1B0942D7278F00094E0B8 /* FirebaseFirestore */,
+				08C1B0962D7278F00094E0B8 /* FirebaseStorage */,
 			);
 			productName = songflow;
 			productReference = 08C1AE9E2D71F7D50094E0B8 /* songflow.app */;
@@ -119,6 +128,7 @@
 			packageReferences = (
 				08C1B0662D7258CB0094E0B8 /* XCRemoteSwiftPackageReference "BYCustomTextField" */,
 				08C1B0692D7258D60094E0B8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				08C1B0912D7278F00094E0B8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 08C1AE9F2D71F7D50094E0B8 /* Products */;
@@ -380,6 +390,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		08C1B0912D7278F00094E0B8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.9.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -392,6 +410,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 08C1B0692D7258D60094E0B8 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		08C1B0922D7278F00094E0B8 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08C1B0912D7278F00094E0B8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		08C1B0942D7278F00094E0B8 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08C1B0912D7278F00094E0B8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		08C1B0962D7278F00094E0B8 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08C1B0912D7278F00094E0B8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
