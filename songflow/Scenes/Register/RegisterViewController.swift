@@ -171,7 +171,7 @@ private extension RegisterViewController {
     @objc func registerTapped() {
         viewModel.register(with: emailTextField.text ?? "", and: passwordTextField.text ?? "") { [weak self] authError in
             guard let self else { return }
-            if let authError = authError {
+            if authError != nil {
                 let alertController = UIAlertController(
                     title: "HATA",
                     message: "Kayıt işlemi başarısız",

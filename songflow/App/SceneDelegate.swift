@@ -22,8 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
         
         let authNavController = UINavigationController(rootViewController: LoginViewController())
+        authNavController.navigationBar.tintColor = .white
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve) {
                 window.rootViewController = authNavController
             }
@@ -35,5 +36,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillResignActive(_ scene: UIScene) {}
     func sceneWillEnterForeground(_ scene: UIScene) {}
     func sceneDidEnterBackground(_ scene: UIScene) {}
-    
 }

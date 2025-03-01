@@ -165,10 +165,6 @@ private extension LoginViewController {
 //MARK: - Objective-C Methods
 
 private extension LoginViewController {
-    @objc func forgotPasswordTapped() {
-        
-    }
-    
     @objc func loginButtonTapped() {
         viewModel.login(with: emailTextField.text ?? "", and: passwordTextField.text ?? "") { [weak self] authError in
             guard let self else { return }
