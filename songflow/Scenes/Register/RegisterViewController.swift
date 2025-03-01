@@ -85,12 +85,23 @@ class RegisterViewController: UIViewController {
         return button
     }()
     
+    private let viewModel: RegisterViewModel
+    
     //MARK: - Life Cycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureUI()
+    }
+    
+    init(viewModel: RegisterViewModel = .init()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -158,7 +169,32 @@ private extension RegisterViewController {
 
 private extension RegisterViewController {
     @objc func registerTapped() {
-        navigationController?.pushViewController(RegisterResultViewController(), animated: true)
+        viewModel.register(with: emailTextField.text ?? "", and: passwordTextField.text ?? "") { [weak self] authError in
+            guard let self else { return }
+            if let authError = authError {
+                let alertController = UIAlertController(
+                    title: "HATA",
+                    message: "Kayıt işlemi başarısız",
+                    preferredStyle: .alert
+                )
+                alertController.addAction(
+                    UIAlertAction(title: "Tamam", style: .default)
+                )
+                self.present(alertController, animated: true)
+            } else {
+                if nameTextField.text != "", usernameTextField.text != "" {
+                    self.navigationController?.pushViewController(RegisterResultViewController(), animated: true)
+                } else {
+                    let alertController = UIAlertController(
+                        title: "HATA", message: "Tüm alanların doldurulması zorunludur.", preferredStyle: .alert
+                    )
+                    alertController.addAction(
+                        UIAlertAction(title: "Tamam", style: .default)
+                    )
+                    self.present(alertController, animated: true)
+                }
+            }
+        }
     }
     
     @objc func dismissKeyboard() {

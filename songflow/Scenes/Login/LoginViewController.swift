@@ -48,17 +48,6 @@ class LoginViewController: UIViewController {
         return textField
     }()
     
-    private lazy var forgotPasswordLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Forgot Password?"
-        label.textColor = .lightGray
-        label.font = .systemFont(ofSize: 14, weight: .semibold)
-        label.isUserInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(forgotPasswordTapped))
-        label.addGestureRecognizer(tapGesture)
-        return label
-    }()
-    
     private lazy var loginButton: UIButton = {
         let button = UIButton()
         button.setTitle("Login", for: .normal)
@@ -97,12 +86,25 @@ class LoginViewController: UIViewController {
         return label
     }()
     
+    private let viewModel: LoginViewModel
+    
     //MARK: - Life Cycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()
+    }
+    
+    //MARK: - Inits
+    
+    init(viewModel: LoginViewModel = .init()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -113,7 +115,6 @@ private extension LoginViewController {
         view.addSubview(loginImageView)
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
-        view.addSubview(forgotPasswordLabel)
         view.addSubview(loginButton)
         view.addSubview(footerStackView)
         footerStackView.addArrangedSubview(dontHaveAccountLabel)
@@ -139,13 +140,8 @@ private extension LoginViewController {
             $0.width.equalTo(320)
         }
         
-        forgotPasswordLabel.snp.makeConstraints {
-            $0.top.equalTo(passwordTextField.snp.bottom).offset(16)
-            $0.trailing.equalToSuperview().inset(48)
-        }
-        
         loginButton.snp.makeConstraints {
-            $0.top.equalTo(forgotPasswordLabel.snp.bottom).offset(64)
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(64)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(320)
             $0.height.equalTo(56)
@@ -174,7 +170,22 @@ private extension LoginViewController {
     }
     
     @objc func loginButtonTapped() {
-        
+        viewModel.login(with: emailTextField.text ?? "", and: passwordTextField.text ?? "") { [weak self] authError in
+            guard let self else { return }
+            if let authError = authError {
+                let alertController = UIAlertController(
+                    title: "HATA",
+                    message: "Kullanıcı adı veya parola hatalı",
+                    preferredStyle: .alert
+                )
+                alertController.addAction(
+                    UIAlertAction(title: "Tamam", style: .default)
+                )
+                self.present(alertController, animated: true)
+            } else {
+                self.navigationController?.pushViewController(TabBarController(), animated: true)
+            }
+        }
     }
     
     @objc func registerNowTapped() {
