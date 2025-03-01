@@ -168,7 +168,7 @@ private extension LoginViewController {
     @objc func loginButtonTapped() {
         viewModel.login(with: emailTextField.text ?? "", and: passwordTextField.text ?? "") { [weak self] authError in
             guard let self else { return }
-            if let authError = authError {
+            if authError != nil {
                 let alertController = UIAlertController(
                     title: "HATA",
                     message: "Kullanıcı adı veya parola hatalı",
